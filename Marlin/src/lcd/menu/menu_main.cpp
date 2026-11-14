@@ -485,11 +485,6 @@ void menu_main() {
       GCODES_ITEM(MSG_SWITCH_PS_ON, F("M80"));
   #endif
 
-  // SD Card / Flash Drive
-  #if DISABLED(MEDIA_MENU_AT_TOP)
-    if (!busy) INJECT_MENU_ITEMS(media_menu_items());
-  #endif
-
   #if HAS_SERVICE_INTERVALS
     static auto _service_reset = [](const int index) {
       print_job_timer.resetServiceInterval(index);
@@ -562,6 +557,12 @@ void menu_main() {
       );
     }
 
+  #endif
+
+  //Moved to the bottom
+  // SD Card / Flash Drive
+  #if DISABLED(MEDIA_MENU_AT_TOP)
+    if (!busy) INJECT_MENU_ITEMS(media_menu_items());
   #endif
 
   END_MENU();
