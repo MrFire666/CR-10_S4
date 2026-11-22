@@ -966,7 +966,10 @@
 
   // Safety: The probe needs time to recognize the command.
   //         Minimum command delay (ms). Enable and increase if needed.
-  #define BLTOUCH_DELAY 1000
+  //#define BLTOUCH_DELAY 1000
+
+  //Increase delay for deployment of the probe, as my 3D-Touch can be slow as fuck (but only sometimes...)
+  #define BLTOUCH_DEPLOY_DELAY   2000
 
   /**
    * Settings for BLTOUCH Classic 1.2, 1.3 or BLTouch Smart 1.0, 2.0, 2.2, 3.0, 3.1, and most clones:
