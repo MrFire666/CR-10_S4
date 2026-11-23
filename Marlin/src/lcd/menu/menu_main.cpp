@@ -413,12 +413,12 @@ void menu_main() {
     SUBMENU(MSG_MOTION, menu_motion);
   }
 
-  //I want the temperature menu after the motion menu and before the probe menu
   #if HAS_TEMPERATURE
     SUBMENU(MSG_TEMPERATURE, menu_temperature);
   #endif
 
   if(!busy)
+  {
     #if ANY(HAS_LEVELING, HAS_BED_PROBE, ASSISTED_TRAMMING_WIZARD, LCD_BED_TRAMMING)
       SUBMENU(MSG_PROBE_AND_LEVEL, menu_probe_level);
     #endif
