@@ -4083,7 +4083,8 @@
  *
  * Execute certain G-code commands immediately after power-on.
  */
-//#define STARTUP_COMMANDS "M17 Z"
+//Immediately start heating the bed pls.
+#define STARTUP_COMMANDS "M140 S60"
 
 /**
  * G-code Macros

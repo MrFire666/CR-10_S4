@@ -409,8 +409,6 @@ void menu_main() {
     #if ENABLED(PREHEAT_SHORTCUT_MENU_ITEM)
       SUBMENU(MSG_PREHEAT_CUSTOM, menu_preheat_only);
     #endif
-
-    SUBMENU(MSG_MOTION, menu_motion);
   }
 
   #if HAS_TEMPERATURE
@@ -419,6 +417,8 @@ void menu_main() {
 
   if(!busy)
   {
+    SUBMENU(MSG_MOTION, menu_motion);
+
     #if ANY(HAS_LEVELING, HAS_BED_PROBE, ASSISTED_TRAMMING_WIZARD, LCD_BED_TRAMMING)
       SUBMENU(MSG_PROBE_AND_LEVEL, menu_probe_level);
     #endif
